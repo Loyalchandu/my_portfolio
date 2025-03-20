@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChandraShekar | Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+
+    <!-- Header Section -->
+    <div id="header">
+        <div class="container">
+            <nav>
+                <div class="logo"><span class="colored">C</span>handraShekar.</div>
+                <ul id="sidemenu">
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <i class="fas fa-times" onclick="closemenu()"></i>
+                </ul>
+                <i class="fas fa-bars" onclick="openmenu()"></i>
+            </nav>
+            <div class="header-text">
+                <p>Software Engineer | Web Developer</p>
+                <h1>Hi, I'm <span>Chandra</span> Shekar</h1>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <div class="about-container" id="about">
+        <div class="about-left">
+            <img src="" alt="Profile Picture">
+        </div>
+        <div class="about-right">
+            <h1>About Me</h1>
+            <p>Aspiring software engineer with a strong foundation in computer science and a passion for solving complex problems through innovative solutions. Seeking an opportunity to leverage my skills in Java, web development, and problem-solving to contribute to a dynamic team while continuously learning and growing in a professional environment.</p>
+            <div class="tab-titles">
+                <p class="tab-links active" onclick="openTab(event, 'skills')">Skills</p>
+                <p class="tab-links" onclick="openTab(event, 'experience')">Projects</p>
+                <p class="tab-links" onclick="openTab(event, 'education')">Education</p>
+            </div>
+            <div class="tab-content active" id="skills">
+                <ul>
+                    <li><span>Programming Languages:</span> Java (Core), C</li>
+                    <li><span>Front-end Technologies:</span> HTML, CSS, JavaScript</li>
+                    <li><span>Version Control:</span> Git, GitHub</li>
+                    <li><span>Soft Skills:</span> Problem-Solving, Teamwork, Critical Thinking, Time Management</li>
+                </ul>
+            </div>
+            <div class="tab-content" id="experience">
+                <ul>
+                    <li><span>Share To Live - Donation Website (2024)</span></li>
+                    <li>Developed a web-based donation platform to facilitate food, clothing, and essential donations.</li>
+                    <li>Implemented HTML, CSS, JavaScript, and Node.js for frontend and backend development.</li>
+                    <li>Integrated database connectivity to store and manage donation records efficiently.</li>
+                    <li>Optimized pickup and delivery routes, reducing logistics costs by 25%.</li>
+                    <li>Increased donor engagement by 20%.</li>
+                </ul>
+            </div>
+            <div class="tab-content" id="education">
+                <ul>
+                    <li><span>B.Tech in Computer Science and Engineering (2022 - 2026)</span> - CMR Engineering College (CGPA: 8.4)</li>
+                    <li><span>Intermediate in M.P.C (2020 - 2022)</span> - Krishnaveni Arts Science Junior College (CGPA: 8.9)</li>
+                    <li><span>SSC (2019 - 2020)</span> - New Little Flower (EM) School (CGPA: 10)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <div class="contact-container">
+                <div class="contact-left">
+                    <h2>Contact Me</h2>
+                    <p><i class="fas fa-envelope"></i> loyalchandu678@gmail.com</p>
+                    <p><i class="fas fa-phone"></i> +91 7569459094</p>
+                    <div class="social-icons">
+                        <a href="https://www.linkedin.com/in/chandrashekar-garidepalli" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://github.com/yourgithub" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="https://twitter.com/yourtwitter" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.instagram.com/yourinstagram" target="_blank"><i class="fab fa-instagram"></i></a>
+                    </div>
+                    <a href="chandrashekar_resume.pdf" class="btn">Download CV</a>
+                </div>
+                <div class="contact-right">
+                    <form name="submit-to-google-sheet">
+                        <input type="text" name="Name" placeholder="Your Name" required>
+                        <input type="email" name="Email" placeholder="Your Email" required>
+                        <textarea name="Message" rows="6" placeholder="Your Message" required></textarea>
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                    <span id="msg"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="copyright">
+        <p>© 2025 ChandraShekar | Designed with <i class="fas fa-heart"></i> Passion</p>
+    </div>
+
+
+    <script>
+        function openTab(event, tabName) {
+            let tabContents = document.querySelectorAll(".tab-content");
+            let tabButtons = document.querySelectorAll(".tab-links");
+    
+            tabContents.forEach(tab => tab.style.display = "none");
+            tabButtons.forEach(button => button.classList.remove("active"));
+    
+            document.getElementById(tabName).style.display = "block";
+            event.currentTarget.classList.add("active");
+        }
+    
+        document.addEventListener("DOMContentLoaded", function () {
+            document.getElementById("skills").style.display = "block";
+        });
+       
+        var sidemenu = document.getElementById("sidemenu");
+        function openmenu() {
+            sidemenu.style.right = "0";
+        }
+        function closemenu() {
+            sidemenu.style.right = "-200px";
+        }
+    
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbwyPgEYYcgKU8n4RJj_YSEe_3nvDtCnBMO4luNHfCCyJ4QBnNYFLMgBVSW_aSFMb3L9/exec'
+        const form = document.forms['submit-to-google-sheet']
+        const msg = document.getElementById("msg")
+    
+        form.addEventListener('submit', e => {
+            e.preventDefault();
+            msg.innerHTML = "⏳ Sending message...";  
+            msg.classList.remove("success-message", "error-message"); 
+            msg.classList.add("loading-message"); 
+    
+            fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                .then(response => {
+                    msg.innerHTML = "✅ Message sent successfully!";
+                    msg.classList.remove("loading-message");
+                    msg.classList.add("success-message"); 
+                    
+                    form.reset();
+                    setTimeout(() => { msg.innerHTML = ""; msg.classList.remove("success-message"); }, 5000);
+                })
+                .catch(error => {
+                    msg.innerHTML = "❌ Failed to send. Try again.";
+                    msg.classList.remove("loading-message");
+                    msg.classList.add("error-message"); 
+                });
+        });
+    </script>
+</body>
+</html>
