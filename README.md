@@ -1,2 +1,2 @@
 # my_portfolio
-Responsive web design
+Responsive web design using Html, Css and JavaScript
